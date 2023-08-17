@@ -1,0 +1,70 @@
+###
+GET http://localhost:3000/categories
+
+###
+GET http://localhost:3000/categories/4
+
+###
+POST http://localhost:3000/categories
+Content-Type: application/json
+ 
+{
+    "name": "Teste",
+    "description": 5
+}
+
+###
+PATCH http://localhost:3000/categories/4
+Content-Type: application/json
+
+{
+    "description": "xpto"
+}
+
+###
+DELETE http://localhost:3000/categories/3
+
+
+
+
+###
+GET http://localhost:3000/videos
+
+###
+GET http://localhost:3000/videos/1
+
+###
+POST http://localhost:3000/videos
+Content-Type: application/json
+ 
+{
+    "title": "Teste",
+    "description": "Lorem ipsum dolor",
+    "category_id": 10
+}
+
+###
+POST http://localhost:3000/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234
+ 
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="title"
+
+Video 2
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="description"
+
+Description 2
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="category_id"
+
+1
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="file"; filename="video.mp4"
+Content-Type: markdown
+
+< ./README.md
+------WebKitFormBoundary1234--
+
+###
+GET http://localhost:3000/videos/file/1692228171176.0933.mp4
